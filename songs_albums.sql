@@ -6,6 +6,12 @@
  * 
  * Note that album - song is a one-to-many relationship, so no bridge table is needed.
  */
+CREATE TABLE Songs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(70) NOT NULL,
+    album_id INTEGER NOT NULL,
+    FOREIGN KEY (album_id) REFERENCES Albums(id)
+);
 
 CREATE TABLE Albums (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,6 +23,14 @@ CREATE TABLE Albums (
 /* 
  * TODO: Insert at least 4 rows of data into the songs table. You can change up the albums as well. :)
  */
+INSERT INTO Songs
+    (name, album_id)
+VALUES
+    ('Any Colour You Like', 1),
+    ('Here Comes The Sun', 2),
+    ('Hotel California', 3),
+    ('Born in the U.S.A', 4)
+;
  
 INSERT INTO Albums
     (name, artist, year_published)
@@ -32,6 +46,7 @@ VALUES
 /* Queries */
 
 -- SELECT * FROM Songs;
+SELECT * FROM Songs;
 
 SELECT * FROM Albums;
 
