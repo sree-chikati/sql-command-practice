@@ -74,3 +74,5 @@ WHERE Albums.year_published <= 1980
 /*
  * TODO: Find all songs on albums with names containing 'California'.
  */
+SELECT album_name FROM Albums
+WHERE album_name LIKE '%California%'
