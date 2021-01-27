@@ -59,7 +59,9 @@ JOIN Albums ON Albums.id = Songs.album_id;
 /*
  * TODO: Find all albums published between 1970 and 1980.
  */
-
+SELECT * FROM Albums
+WHERE year_published <= 1980
+    AND year_published >= 1970 
 /*
  * TODO: Find all songs on albums published between 1970 and 1980. 
  *(Hint: Use a table join.)
